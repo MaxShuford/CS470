@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 #define PAGE_SIZE 1024
-#define MAX_PAGES 16
 
 int main(void) {
     // our fixed pages
@@ -34,10 +33,12 @@ int main(void) {
             int frame = page_table[page];
             int physical = frame * PAGE_SIZE + offset;
 
+            // Print our results
             printf("Logical: %d | Page: %d | Offset: %d | Frame: %d | Physical: %d\n",
                    logical[i], page, offset, frame, physical);
         }
     }
 
     return 0;
+
 }
